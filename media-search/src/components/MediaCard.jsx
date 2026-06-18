@@ -13,6 +13,8 @@ function MediaCard({mediaData}) {
             </div>
             <div className="media-info">
                 {/* title of media, description, etc*/}
+                <h3>{mediaData.title}</h3>
+                <p>{mediaData.releaseDate}</p>
             </div>
         </div>
     )
