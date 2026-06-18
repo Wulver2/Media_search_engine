@@ -3,7 +3,7 @@ function MediaCard({mediaData}) {
     return (
         <div className="media-card">
             <div className="media-img">
-                <img src="" alt="" />
+                <img src="" alt={mediaData.title} />
                 <div>
                     <button className="favorite-btn">
                         {/* Find a star icon*/}
