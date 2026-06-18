@@ -8,6 +8,10 @@ function Home() {
 
     return (
         <div className="home">
+            <form className="search-form">
+                <input type="text" placeholder="Search" className="search-input"/>
+            </form>
+
             <div className="media-grid">
                 {media.map(m => 
                 <MediaCard key={m.id} mediaData={{title: m.title, releaseDate: m.releaseDate}}>
