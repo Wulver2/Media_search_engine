@@ -1,0 +1,19 @@
+.media-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    color: white;
+}
+.media-info {
+    background-color: gray;
+    text-align: left;
+
+}
+.media-info p {
+    font-size: 12px;
+}
+.media-info h3 {
+    font-size: 14px;
+    margin: 0;
+}

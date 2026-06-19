@@ -1,3 +1,4 @@
+import "../css/MediaCard.css"
 
 function MediaCard({mediaData}) {
     return (
