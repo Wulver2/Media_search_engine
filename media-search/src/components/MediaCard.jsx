@@ -7,8 +7,7 @@ function MediaCard({mediaData}) {
                 <img src="" alt={mediaData.title} />
                 <div>
                     <button className="favorite-btn">
-                        {/* Find a star icon*/}
-                        star
+                        ☆
                     </button>
                 </div>
             </div>
