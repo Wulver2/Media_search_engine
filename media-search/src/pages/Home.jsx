@@ -1,12 +1,22 @@
 import MediaCard from "../components/MediaCard"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getTopAnime } from "../services/api";
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
-    const media = [
-        {id: "1", title: "Bladerunner", releaseDate: "1982"},
-        {id: "2", title: "Red Dead Redemption 2", releaseDate: "2018"}
-    ];
+    const [media, setMedia] = useState([]);
+
+    useEffect(() => {
+        const loadTopAnime = async () => {
+            try {
+                const top = await getTopAnime();
+                setMedia(top)
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        loadTopAnime();
+    }, []);
 
     return (
         <div className="home">
@@ -20,8 +30,13 @@ function Home() {
             <div className="media-grid">
                 {media.map((m) => (
                     m.title.toLowerCase().startsWith(searchQuery) &&
-                    <MediaCard key={m.id} mediaData={{title: m.title, releaseDate: m.releaseDate}}>
-                    </MediaCard>))}
+                    <MediaCard key={m.mal_id} mediaData={{
+                        title: m.title, releaseDate: m.aired.from,
+                        img_url: m.images.jpg.image_url
+                    }}>
+                    </MediaCard>
+                ))}
+
             </div>
         </div>
     );

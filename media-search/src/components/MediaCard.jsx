@@ -4,7 +4,7 @@ function MediaCard({mediaData}) {
     return (
         <div className="media-card">
             <div className="media-img">
-                <img src="" alt={mediaData.title} />
+                <img src={mediaData.img_url} alt={mediaData.title} />
                 <div>
                     <button className="favorite-btn">
                         ☆

@@ -4,9 +4,10 @@ const MOVIE_URL = "";
 
 const ANIME_URL = "https://api.jikan.moe/v4/"
 export const getTopAnime = async() => {
-    const res = await fetch(`${ANIME_URL}/top/anime`)
+    const res = await fetch(`${ANIME_URL}top/anime`)
     const data = await res.json()
-    return data.results
+    console.log(data.data)
+    return data.data
 }
 // Find an api for videogames as well
 // (TV as well if movie api doesn't include them)
