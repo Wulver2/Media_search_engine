@@ -2,5 +2,11 @@
 const MOVIE_API_KEY = "";
 const MOVIE_URL = "";
 
-// Find an api for anime and videogames as well
+const ANIME_URL = "https://api.jikan.moe/v4/"
+export const getTopAnime = async() => {
+    const res = await fetch(`${ANIME_URL}/top/anime`)
+    const data = await res.json()
+    return data.results
+}
+// Find an api for videogames as well
 // (TV as well if movie api doesn't include them)
