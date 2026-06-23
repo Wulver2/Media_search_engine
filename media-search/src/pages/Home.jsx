@@ -1,6 +1,7 @@
 import MediaCard from "../components/MediaCard"
 import { useState, useEffect } from "react";
 import { getTopAnime } from "../services/api";
+import "../css/Home.css"
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -18,6 +19,9 @@ function Home() {
         loadTopAnime();
     }, []);
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+    }
     return (
         <div className="home">
             <form className="search-form">
@@ -31,7 +35,7 @@ function Home() {
                 {media.map((m) => (
                     m.title.toLowerCase().startsWith(searchQuery) &&
                     <MediaCard key={m.mal_id} mediaData={{
-                        title: m.title, releaseDate: m.aired.from,
+                        title: m.title_english, releaseDate: m.aired.from,
                         img_url: m.images.jpg.image_url
                     }}>
                     </MediaCard>

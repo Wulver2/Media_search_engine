@@ -14,7 +14,7 @@ function MediaCard({mediaData}) {
             <div className="media-info">
                 {/* title of media, description, etc*/}
                 <h3>{mediaData.title}</h3>
-                <p>{mediaData.releaseDate}</p>
+                <p>{mediaData.releaseDate.split("-")[0]}</p>
             </div>
         </div>
     )

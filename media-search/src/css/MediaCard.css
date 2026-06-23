@@ -4,6 +4,7 @@
     height: 100%;
     position: relative;
     color: white;
+    background-color: rgb(41, 44, 54);
 }
 .media-info {
     background-color: rgb(36, 37, 41);
