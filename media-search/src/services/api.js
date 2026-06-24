@@ -9,5 +9,6 @@ export const getTopAnime = async() => {
     console.log(data.data)
     return data.data
 }
+
 // Find an api for videogames as well
 // (TV as well if movie api doesn't include them)

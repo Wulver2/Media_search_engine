@@ -5,6 +5,7 @@
     position: relative;
     color: white;
     background-color: rgb(41, 44, 54);
+    margin: 0;
 }
 .media-info {
     background-color: rgb(36, 37, 41);
@@ -17,4 +18,17 @@
 .media-info h3 {
     font-size: 14px;
     margin: 0;
+}
+
+.favorite-btn {
+    position: absolute;
+    border-style: none;
+    background: none;
+    font-size: 1rem;
+    top: 0;
+    right: 10px;
+}
+
+.media-img {
+    min-width: 100%;
 }
