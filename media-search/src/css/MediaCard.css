@@ -22,8 +22,8 @@
 
 .favorite-btn {
     position: absolute;
+    border-radius: 50px;
     border-style: none;
-    background: none;
     font-size: 1rem;
     top: 0;
     right: 10px;
