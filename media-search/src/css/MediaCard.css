@@ -27,6 +27,11 @@
     font-size: 1rem;
     top: 0;
     right: 10px;
+    color: rgb(41, 44, 54);
+}
+
+.favorite-btn.favorited {
+    color: white;
 }
 
 .media-img {

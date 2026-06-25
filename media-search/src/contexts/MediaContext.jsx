@@ -4,7 +4,7 @@ const MediaContext = createContext();
 
 export const useMediaContext = () => useContext(MediaProvider);
 
-export const MediaProvider = ({children}) => {
+export const MediaProvider = ({ children }) => {
     const [favorites, setFavorites] = useState([])
     
     useEffect(() => {
@@ -36,8 +36,15 @@ export const MediaProvider = ({children}) => {
     const isFavorite = (movieID) => {
         return favorites.some(movie => movie.id == movieID)
     }
-    
-    return <MovieContext.MediaProvider>
+
+    const value = {
+        favorites,
+        addFavorite,
+        removeFavorite,
+        isFavorite
+    }
+
+    return <MediaContext.MediaProvider value = {value}>
         {children}
-    </MovieContext.MediaProvider>
+    </MediaContext.MediaProvider>
 }

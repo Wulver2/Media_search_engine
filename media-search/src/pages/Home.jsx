@@ -36,7 +36,7 @@ function Home() {
                     m.title.toLowerCase().startsWith(searchQuery) &&
                     <MediaCard key={m.mal_id} mediaData={{
                         title: m.title_english, releaseDate: m.aired.from,
-                        img_url: m.images.jpg.image_url
+                        img_url: m.images.jpg.image_url, id: m.mal_id
                     }}>
                     </MediaCard>
                 ))}
