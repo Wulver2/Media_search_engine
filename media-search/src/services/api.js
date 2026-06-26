@@ -6,7 +6,6 @@ const ANIME_URL = "https://api.jikan.moe/v4/"
 export const getTopAnime = async() => {
     const res = await fetch(`${ANIME_URL}top/anime`)
     const data = await res.json()
-    console.log(data.data)
     return data.data
 }
 

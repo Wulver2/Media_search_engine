@@ -5,16 +5,16 @@ function MediaCard({mediaData}) {
     const {isFavorite, addFavorite, removeFavorite} = useMediaContext();
     const favorite = isFavorite(mediaData.id)
 
-    onFavoriteClick = () => {
+    const onFavoriteClick = (e) => {
         e.preventDefault()
 
-        if (favorite == True) {
-            favorite == False;
+        if (favorite == true) {
+            favorite == false;
             removeFavorite(mediaData.id);
         }
         else {
-            favorite == True;
-            addFavorite(mediaData.id);
+            favorite == true;
+            addFavorite(mediaData);
         }
 
     }
@@ -24,7 +24,7 @@ function MediaCard({mediaData}) {
             <div className="media-img">
                 <img src={mediaData.img_url} alt={mediaData.title} />
                 <div>
-                    <button onclick={onFavoriteClick()} className={`favorite-btn ${favorite ? "favorited" : ""}`}>
+                    <button onClick={(e) => onFavoriteClick(e)} className={`favorite-btn ${favorite ? "favorited" : ""}`}>
                         ★
                     </button>
                 </div>

@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const MediaContext = createContext();
 
-export const useMediaContext = () => useContext(MediaProvider);
+export const useMediaContext = () => useContext(MediaContext);
 
 export const MediaProvider = ({ children }) => {
     const [favorites, setFavorites] = useState([])
@@ -20,7 +20,7 @@ export const MediaProvider = ({ children }) => {
     }, [favorites])
     
     const addFavorite = (movie) => {
-        update = [...favorites, movie]
+        const update = [...favorites, movie]
         setFavorites(update)
     }
 
@@ -44,7 +44,7 @@ export const MediaProvider = ({ children }) => {
         isFavorite
     }
 
-    return <MediaContext.MediaProvider value = {value}>
+    return <MediaContext.Provider value = {value}>
         {children}
-    </MediaContext.MediaProvider>
+    </MediaContext.Provider>
 }
